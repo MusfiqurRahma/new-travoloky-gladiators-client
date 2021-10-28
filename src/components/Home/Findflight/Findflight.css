@@ -1,0 +1,10 @@
+.flight-container{
+    background-image: linear-gradient(#06beb6,#48b1bf);
+    height:50vh;
+    /* background-attachment: fixed; */
+}
+.flight-form{
+    margin-top: 20px;
+ background-image: linear-gradient(white,#ffffff);
+ height:30vh;
+}
