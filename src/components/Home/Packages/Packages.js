@@ -28,7 +28,7 @@ const Packages = () => {
                 <button className="country-btn" style={{marginRight:'10px'}}>USA</button>
                 <button className="country-btn" style={{ marginRight: '10px' }}>Turky</button>
             </div>
-            <Row xs={1} md={3} className="g-4">
+            <Row xs={1} md={3} className="g-3">
                 {
                  packages.map(item=> <Package package={item}></Package>)   
               }

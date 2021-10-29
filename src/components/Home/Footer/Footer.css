@@ -1,0 +1,72 @@
+.facebook{
+    margin-right: 10px;
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius:50px;
+    color: white;
+    padding:8px;
+}
+.facebook:hover{
+    color: #4064ac;
+    background-color: #fff;
+    transition: 0.5s;
+}
+.twitter{
+    margin-right: 10px;
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius:50px;
+    color: white;
+    padding:8px;
+}
+.twitter:hover{
+    color: #1c9cea;
+    background-color: #fff;
+    transition: 0.5s;
+}
+.instagram{
+    margin-right: 10px;
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius:50px;
+    color: white;
+    padding:8px;
+}
+.instagram:hover{
+    color: #f52e5c;
+    background-color: #fff;
+    transition: 0.5s;
+}
+.whatsapp{
+    margin-right: 10px;
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius:50px;
+    color: white;
+    padding:8px;
+}
+.whatsapp:hover{
+    color: #41bd51;
+    background-color: #fff;
+    transition: 0.5s;
+}
+.pinterest{
+    margin-right: 10px;
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius:50px;
+    color: white;
+    padding:8px;
+}
+.pinterest:hover{
+    color: #df0022;
+    background-color: #fff;
+    transition: 0.5s;
+}
+.explore p:hover{
+   color: #4064ac;
+}
+.blog img{
+    width: 50px;
+    border-radius: 50%;
+}

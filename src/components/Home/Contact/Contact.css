@@ -1,0 +1,30 @@
+.contact-container{
+    background-image: url('../../../Image/bg/photo-1466788049062-cb2e89aa6ccc.jpeg');
+    height:80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 10%;
+}
+.contact-container form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 60%;
+}
+.contact-container form input{
+    margin: 10px;
+    width: 70%;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.contact{
+    margin-right: 50%;
+    font-weight: 800;
+}
+.input-btn{
+    font-weight: 600;
+}
+.input-btn:hover{
+    background-color: aqua;
+    transition:0.5s;
+}

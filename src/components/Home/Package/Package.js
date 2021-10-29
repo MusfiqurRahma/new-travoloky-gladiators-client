@@ -5,7 +5,7 @@ const Package = () => {
     return (
         <div>
             <Col>
-      <Card>
+      <Card className="w-75 mx-auto">
         <Card.Img variant="top" src="holder.js/100px160" />
         <Card.Body>
           <Card.Title>Card title</Card.Title>
