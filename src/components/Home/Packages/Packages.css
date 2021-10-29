@@ -1,0 +1,8 @@
+.country-btn{
+    background-color: #0e8e4c;
+    border: 1px solid #0e8e4c;
+    color: white
+}
+.country-btn:hover{
+    background-color: #18c46b;
+}

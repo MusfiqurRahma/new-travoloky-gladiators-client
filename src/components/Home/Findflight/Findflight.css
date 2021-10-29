@@ -4,7 +4,23 @@
     /* background-attachment: fixed; */
 }
 .flight-form{
-    margin-top: 20px;
  background-image: linear-gradient(white,#ffffff);
  height:30vh;
+ width: 80%;
+ margin-top: 20px;
+ margin: auto;
+ border-radius: 15px;
+}
+label{
+    margin-right: 30px;
+}
+.btn-submit{
+    background-color: #26ada7;
+    border: 1px solid #42928e;
+    padding:6px 25px;
+    color: #fff;
+    font-size:18px;
+}
+.btn-submit:hover{
+    background-color: #06beb6;
 }

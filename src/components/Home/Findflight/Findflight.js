@@ -7,13 +7,44 @@ const Findflight = () => {
   const onSubmit = data => console.log(data);
     return (
         <div className="flight-container">
-            <input type="radio" name="radio" id="" />
-            <h2>Find Your Flight</h2>
-      <form className="flight-form" onSubmit={handleSubmit(onSubmit)}>
-      <input {...register("place", { required: true, maxLength: 20 })} type='place'/>
-      <input {...register("lastName", { pattern: /^[A-Za-z]+$/i })} />
-      <input type="number" {...register("age", { min: 18, max: 99 })} />
-      <input type="submit" />
+            <h1 className="text-white">Find Your Flight</h1>
+        <form className="flight-form" onSubmit={handleSubmit(onSubmit)}>
+          <div className="mt-4">
+          <label><input type="radio" name="radio" id=""/> OneWay</label>
+          <label><input type="radio" name="radio" id=""/> Return</label>
+          <label><input type="radio" name="radio" id=""/> Multicities</label>
+        </div>
+        <input
+                {...register("place")}
+                placeholder="Place"
+                className="p-2 m-2"
+              />
+              <input
+                {...register("date")}
+                // placeholder="Name"
+                type="date"
+            className="p-2 m-2"
+            placeholder="Check in"
+              />
+              <input
+                {...register("date")}
+                type="date"
+            className="p-2 m-2"
+            placeholder="Check Out"
+              />
+          <input
+            type="number"
+            placeholder="Adult"
+            className="p-2 m-2"
+            {...register("number",
+              { min: 18, max: 99 })} />
+          <input
+            type="number"
+            placeholder="Child"
+            className="p-2 m-2"
+            {...register("number",
+              { min: 18, max: 99 })} />
+      <input className="btn-submit" type="submit"/>
     </form>
         </div>
     );

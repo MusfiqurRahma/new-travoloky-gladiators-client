@@ -1,0 +1,19 @@
+hr.line-title {
+    position: relative;
+    width: 80px;
+    top: -28px;
+    border-top: 4px solid rgb(21, 7, 212);
+    margin:auto;
+    margin-top: 40px;
+}
+.travleoky-btn{
+    margin-left: 30px;
+    padding:12px 30px;
+    border: 1px solid rgb(189, 148, 148);
+    font-weight: 600;
+    border-radius:8px;
+}
+.travleoky-btn:hover{
+    background-color: aqua;
+    transition: 0.5s;
+}
