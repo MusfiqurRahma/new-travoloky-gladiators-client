@@ -5,7 +5,7 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <div style={{background:'#0a1735',padding:'15px'}} className="footer-container">
+       <> <div style={{background:'#0a1735',padding:'15px'}} className="footer-container">
         <Container>
         <Row>
             <Col>
@@ -93,7 +93,8 @@ const Footer = () => {
            </Col>
          </Row>
         </Container>
-        </div>
+      </div>
+       <p className='text-white bg-secondary'>All rights reserved @2021,Musfiqur Rahman</p></>
     );
 };
 

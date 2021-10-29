@@ -1,0 +1,26 @@
+.login-box{
+    width: 22rem;
+    height: auto;
+    border-radius: 2px;
+}
+.login-img{
+    margin-left: 100px;
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    border:1px solid #12bddb;
+}
+.form{
+    margin-left: 25%;
+}
+.btn-block{
+    padding: 8px 30px;
+}
+.btn-google{
+    padding: 6px 50px;
+}
+.fa-google{
+    margin-right: 10px;
+    font-size: 18px;
+    color: #d54836;
+}

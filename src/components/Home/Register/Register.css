@@ -1,0 +1,42 @@
+.login-form{
+    border: 1px solid gray;
+    width: 500px;
+    height: 450px;
+    margin: auto;
+    box-shadow: 0px 0px 10px 0px;
+    margin-top: 50px;
+
+}
+.login-form:hover{
+    background-color: whitesmoke;
+}
+.reg-form{
+    margin-top: 40px;
+}
+.reg-form input{
+    display: block;
+    margin-top: 32px;
+    padding: 3px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 300px;
+    margin-left: 85px;
+}
+.btn-google{
+    background-color: rgb(53, 180, 219);
+    border: 1px solid rgb(53, 180, 219);
+    border-radius: 5px;
+    padding: 12px 25px;
+    
+}
+.btn-google:hover{
+    background-color: rgb(26, 153, 192);
+}
+.reg-submit{
+    background-color: rgb(53, 180, 219);
+    font-weight: 600;
+    color: white;
+}
+.reg-submit:hover{
+    background-color: rgb(26, 153, 192);
+}

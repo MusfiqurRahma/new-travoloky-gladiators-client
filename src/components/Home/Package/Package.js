@@ -11,11 +11,12 @@ const Package = () => {
           <Card.Title>Card title</Card.Title>
           <Card.Text>
             This is a longer card with supporting text below as a natural
-            lead-in to additional content. This content is a little bit longer.
+                lead-in to additional content. This content is a little bit longer.
+                <button>Buy Tickit</button>
           </Card.Text>
-        </Card.Body>
-      </Card>
-    </Col>
+            </Card.Body>
+          </Card>
+        </Col>
         </div>
     );
 };
