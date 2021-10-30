@@ -1,0 +1,13 @@
+.addpackage-container{
+    background-color: rgb(247, 245, 242);
+}
+.addpackage-container form{
+    display: flex;
+    flex-direction: column;
+}
+.addpackage-container form input{
+    width: 40%;
+    margin: auto;  
+    margin-top: 20px;
+    margin-bottom: 20px;    
+}
