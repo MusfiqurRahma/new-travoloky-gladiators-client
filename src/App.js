@@ -12,6 +12,7 @@ import Notfound from './components/Home/Notfound/Notfound';
 import Packages from './components/Home/Packages/Packages';
 import Register from './components/Home/Register/Register';
 import Singlepackage from './components/Home/Singlepackage/Singlepackage';
+import Orderplace from './components/Orderplace/Orderplace';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 
@@ -52,6 +53,9 @@ function App() {
           </Route>
           <Route exact path ='/contact'>
             <Contact></Contact>
+          </Route>
+          <Route exact path ='/orderplace'>
+            <Orderplace></Orderplace>
           </Route>
           <Route exact path ='*'>
             <Notfound></Notfound>
