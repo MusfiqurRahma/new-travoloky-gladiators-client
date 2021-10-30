@@ -1,5 +1,8 @@
 import { BrowserRouter,Switch,Route } from 'react-router-dom';
 import './App.css';
+import Addpackage from './components/Database/Addpackage/Addpackage';
+import Manageallorders from './components/Database/Manageallorders/Manageallorders';
+import Myorder from './components/Database/Myorders/Myorder';
 import About from './components/Home/About/About';
 import Contact from './components/Home/Contact/Contact';
 import Footer from './components/Home/Footer/Footer';
@@ -56,6 +59,15 @@ function App() {
           </Route>
           <Route exact path ='/orderplace'>
             <Orderplace></Orderplace>
+          </Route>
+          <Route exact path ='/myorder'>
+            <Myorder></Myorder>
+          </Route>
+          <Route exact path ='/manageorders'>
+            <Manageallorders></Manageallorders>
+          </Route>
+          <Route exact path ='/addpackage'>
+            <Addpackage></Addpackage>
           </Route>
           <Route exact path ='*'>
             <Notfound></Notfound>

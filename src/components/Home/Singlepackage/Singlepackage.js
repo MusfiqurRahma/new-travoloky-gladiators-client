@@ -2,8 +2,8 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 const Singlepackage = () => {
-
     const { orderId } = useParams()
     const [orders, setOrders] = useState({});
     useEffect(() => {
@@ -35,7 +35,7 @@ const Singlepackage = () => {
         </Col>
          </Row>
         </Card.Body>
-       <Button className='bg-secondary'>Order Now</Button>
+       <Link><Button className='bg-secondary'>Order Now</Button></Link>
     </Card>
   </Col>
 </Row>

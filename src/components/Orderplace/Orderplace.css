@@ -1,0 +1,26 @@
+.order-container form{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEQyds3eEE5mj3mhNBaLpodDVMV5VE1QmZJw&usqp=CAU');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid gray;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: auto;
+}
+.order-container form input{
+    width: 40%;
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 8px;
+}
+.submit-btn{
+    font-weight: 800;
+    background-color: #43c7c5;
+    color: #0a1735;
+}
+.submit-btn:hover{
+    background-color: #0de2df;
+    transition: 0.5s;
+}

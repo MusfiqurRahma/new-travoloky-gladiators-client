@@ -7,14 +7,16 @@
     background-attachment: fixed;
 }
 .logOut{
-    background-image: linear-gradient(#11998e,#38ef7d);
-    border: 1px solid #11998e;
+    background-image: linear-gradient(#509ee2,#8eaac2);
+    border: 1px solid #819492;
     margin-right: 8px;
     color: whitesmoke;
-    padding: 6px 15px;
+    padding: 0 8px;
+    border-radius: 5px;
+    margin-bottom: 8px;
 }
 .logOut:hover{
-    background-image: linear-gradient(#00F260,#0575E6);
+    background-image: linear-gradient(#4e7e61,#264869);
 }
 Nav a{
     text-decoration: none;

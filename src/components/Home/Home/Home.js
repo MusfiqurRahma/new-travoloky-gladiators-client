@@ -6,6 +6,8 @@ import Hotels from '../Hotels/Hotels';
 import Newsandupdate from '../Newsandupdates/Newsandupdate';
 import Packages from '../Packages/Packages';
 
+
+
 const Home = () => {
     return (
         <div>
