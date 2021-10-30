@@ -1,0 +1,10 @@
+.booking-btn{
+  background-color: #0bbdb7;
+  border: 1px solid #0bbdb7;
+  border-radius: 10px;
+  padding: 6px 12px;
+  color: white;
+}
+.booking-btn:hover{
+  background-color: rgb(5, 144, 146);
+}

@@ -32,21 +32,21 @@ const Header = () => {
      <Container>
         <Navbar.Brand href="#home"><img src={logo} alt="" /></Navbar.Brand>
           <Nav className="me-end mx-5">
-            <Link className="text-white mx-3" to="/home">Home</Link>
-          <Link className="text-white mx-3" to="/about">About</Link>
-          <Link className="text-white mx-3" to="/packages">Packages</Link>
-        <Link className="text-white mx-3" to="/hotel">Hotel</Link>
+          <Link className="text-white mx-3" to="/home">Home</Link>
+         <Link className="text-white mx-3" to="/about">About</Link>
+         <Link className="text-white mx-3" to="/packages">Packages</Link>
+        <Link className="text-white mx-3" to="/hotels">Hotel</Link>
         <Link className="text-white mx-3" to="/news">News N Update</Link>
         <Link className="text-white mx-3" to="/contact">Contact</Link>
-      </Nav>
-     </Container>
+       </Nav>
+       </Container>
             </Navbar>
             <h1 style={{ fontSize: '120px', fontWeight: '700', color: 'whitesmoke' }}>Discover</h1>
             <h4 style={{ color: 'white' }}>THE WORLD YOU HAVE NEVER SEEN</h4>
             <Button variant="primary" size="lg">
-            Dummy
+            See More
            </Button>{' '}
-        </div>
+           </div>
     );
 };
 

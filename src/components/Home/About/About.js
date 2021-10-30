@@ -4,7 +4,7 @@ import './About.css';
 
 const About = () => {
     return (
-        <div>
+        <div style={{marginBottom:'50px'}}>
             <Container>
                 <h2 style={{fontWeight:'800',marginTop:'40px'}}>WE ARE TRAVELOKY</h2> <hr className='line-title'/>
              <Row>
@@ -15,7 +15,7 @@ const About = () => {
                      <button className="travleoky-btn">Purchase Now</button>       
               </Col>
               <Col sm={6}>
-              <img height='80%' src="http://maystudio.link/traveloky/img/img-about.jpg" alt="" />
+              <img height='90%'  style={{marginRight:'40%'}} src="https://media.istockphoto.com/photos/happy-guy-walking-with-mobile-phone-and-bag-picture-id507753728?k=20&m=507753728&s=612x612&w=0&h=Ty2gsizQXp83w8o-EyOrg1Jtfs9RsvOumNt39oRmoHM=" alt="" />
               </Col>
              </Row>
             </Container>

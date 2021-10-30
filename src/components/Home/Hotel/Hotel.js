@@ -1,19 +1,26 @@
 import React from 'react';
+import { Col, Row } from 'react-bootstrap';
 
-const Hotel = () => {
+const Hotel = (props) => {
+  const { img,name,description,price,star }= props.hotel;
     return (
-        <div style={{display: 'flex',border: '1px solid gray'}}>
-             <div>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVR6_cfnefBRR3W4kD1fobBChQiGYbDAE7xwbOQmsTDLzEmOah0ry6-PU2DnERsfsXV2g&usqp=CAU" class="img-fluid rounded-start" alt="..."/>
-    </div>
-    <div >
+      <div className="col">
+    <div className="card m-auto">
+      <img src={img} className="card-img-top" alt="..."/>
       <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">This is a wider card with supporting</p>
-        <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+            <h5 className="card-title">{name}</h5>
+            <p className="card-text">{description.slice(0,200)}</p>
+            <Row style={{border:'1px solid gray',height:'30px',backgroundColor:'#0bbdb7',color:'white'}}>
+              <Col>
+                 <h5>${price}</h5>
+              </Col>
+              <Col>
+                 <h5>*{star}</h5>
+              </Col>
+            </Row>
       </div>
     </div>
-        </div>
+  </div>
     );
 };
 

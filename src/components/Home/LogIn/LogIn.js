@@ -1,18 +1,24 @@
 import React from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link,useHistory,useLocation} from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './LogIn.css';
 
 
 const LogIn = () => {
-  const { signInUsingGoogle,setEmail,setPassword} = useAuth();
+  const { signInUsingGoogle, setEmail, setPassword} = useAuth();
+  
+  const history = useHistory();
+  const location = useLocation();
+  const url = location.state?.from || '/'
+  
    
     const handleGoogleLogin = () => {
         signInUsingGoogle()
-            .then(result => {
-            
-        })
+          .then(result => {
+              console.log(result);
+              history.push(url);
+          })
   }
   const handleEmailChange = e => {
     setEmail(e.target.value);
@@ -44,10 +50,10 @@ const handlePasswordChange = e => {
           <Button className='btn-block' variant="secondary" type="submit">Submit
            </Button>
 
-      <p>New User? <Link to='/register'>Create Account ?</Link></p>   
+      <h5 className='text-primary'>New to Travoloky? <Link to='/register'>Create Account ?</Link></h5>   
       
       <div className='text-danger'>------Sign in with------</div>
-      <Button onClick={handleGoogleLogin} className='btn-googlee' variant="secondary" type="submit"><i className="fab fa-google"></i>
+      <Button onClick={handleGoogleLogin} className='btn-google' type="submit"><i className="fab fa-google"></i>
       Google
       </Button>
 

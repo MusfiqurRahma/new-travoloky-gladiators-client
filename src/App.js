@@ -11,7 +11,9 @@ import Newsandupdate from './components/Home/Newsandupdates/Newsandupdate';
 import Notfound from './components/Home/Notfound/Notfound';
 import Packages from './components/Home/Packages/Packages';
 import Register from './components/Home/Register/Register';
+import Singlepackage from './components/Home/Singlepackage/Singlepackage';
 import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -32,21 +34,24 @@ function App() {
           </Route>
           <Route exact path ='/register'>
             <Register></Register>
-          </Route>
-          <Route exact path ='/hotel'>
+            </Route>
+            <Route exact path ='/about'>
+            <About></About>
+          </Route>          
+          <Route exact path ='/hotels'>
             <Hotel></Hotel>
           </Route>
           <Route exact path ='/packages'>
             <Packages></Packages>
           </Route>
+          <PrivateRoute path ='/singlepackage/:orderId'>
+            <Singlepackage></Singlepackage>
+          </PrivateRoute>
           <Route exact path ='/news'>
             <Newsandupdate></Newsandupdate>
           </Route>
           <Route exact path ='/contact'>
             <Contact></Contact>
-          </Route>
-          <Route exact path ='/about'>
-            <About></About>
           </Route>
           <Route exact path ='*'>
             <Notfound></Notfound>

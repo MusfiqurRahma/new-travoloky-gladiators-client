@@ -1,20 +1,24 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import './Package.css';
 
-const Package = () => {
+const Package = (props) => {
+  const { _id,name, img, Description } = props.package;
     return (
         <div>
-            <Col>
-      <Card className="w-75 mx-auto">
-        <Card.Img variant="top" src="holder.js/100px160" />
+        <Col>
+       <Card className="w-75 mx-auto">
+        <Card.Img variant="top" src={img} />
         <Card.Body>
-          <Card.Title>Card title</Card.Title>
+          <Card.Title>{name}</Card.Title>
           <Card.Text>
-            This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit longer.
-                <button>Buy Tickit</button>
-          </Card.Text>
-            </Card.Body>
+              {Description}
+              </Card.Text>
+              <Link to={`/singlepackage/${_id}`}>
+              <button className='booking-btn'>Book Now</button>
+              </Link>
+          </Card.Body>
           </Card>
         </Col>
         </div>

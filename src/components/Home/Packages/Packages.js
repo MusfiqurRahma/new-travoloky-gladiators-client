@@ -1,13 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
 import Package from '../Package/Package';
 import './Packages.css';
 
 const Packages = () => {
+    const { register, handleSubmit,reset } = useForm();
+    const onSubmit = data => {
+        fetch('http://localhost:5000/packages', {
+            method: 'POST',
+            headers: {
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    alert('Are you sure want to add a new Package?')
+                    reset();
+                }
+            })
+    } 
+
     const [packages, setPackages] = useState([]);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
+        fetch('http://localhost:5000/packages')
             .then(res => res.json())
             .then(data=>setPackages(data))
     },[])
@@ -28,9 +48,19 @@ const Packages = () => {
                 <button className="country-btn" style={{marginRight:'10px'}}>USA</button>
                 <button className="country-btn" style={{ marginRight: '10px' }}>Turky</button>
             </div>
+            <div className='mt-4 mb-4'>
+            <h4 style={{fontWeight:'700'}}>ADD PACKAGES</h4>
+            <form onSubmit={handleSubmit(onSubmit)}>
+            <input {...register("name", { required: true, maxLength: 30 })} placeholder='Name'/>
+            <input {...register("img")} placeholder='Image url'/>
+            <input type="message" {...register("Description", { min: 18, max: 99 })} placeholder='Description'/>
+            <input style={{backgroundColor:'#0bbdb7',border:'1px solid #0bbdb7',padding:'2px 5px',color:'white'}} type="submit" />
+            </form>
+            </div>
             <Row xs={1} md={3} className="g-3">
                 {
-                 packages.map(item=> <Package package={item}></Package>)   
+                    packages.map(item => <Package package={item}
+                    key={item._id}></Package>)
               }
             </Row>
         </div>
