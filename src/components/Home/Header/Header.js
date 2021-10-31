@@ -5,6 +5,7 @@ import './Header.css';
 import logo from '../../../Image/logo/logo-1.png';
 import useAuth from '../../hooks/useAuth';
 
+
 const Header = () => {
   const { user,logOut } = useAuth();
   return (
@@ -14,9 +15,15 @@ const Header = () => {
          <Navbar.Collapse className="justify-content-center">
             <Nav className='text-primary'>
                <Link className='text-light fw-bold mx-3'  to="/home">Home</Link>
-                 <Link className="text-light fw-bold" to="/myorder">My Orders</Link>
-         <Link className="text-light fw-bold mx-3" to="/manageorders">Manage Orders</Link>
-        <Link className="text-light fw-bold mx-3" to="/addpackage">Add Package</Link>
+            {
+              user.email?<Link className="text-light fw-bold" to="/myorder">My Orders</Link>:''
+            }
+            {
+              user.email?<Link className="text-light fw-bold mx-3" to="/manageorders">Manage Orders</Link>:''
+            }
+            {
+              user.email?<Link className="text-light fw-bold mx-3" to="/addpackage">Add Package</Link>:''
+            }      
             <Link className="text-light fw-bold mx-3" to="/news">News N Update</Link>
             {
                 user.email? <button className='logOut' onClick={logOut}>Log Out</button>:<Link className="text-white mx-3" to='/login'><i className="fas fa-user"></i>Login</Link>

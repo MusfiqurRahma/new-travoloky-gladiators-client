@@ -1,0 +1,12 @@
+.single-package-form{
+    display: flex;
+    flex-direction: column;
+}
+.single-package-form input,textarea{
+    margin:5px;
+}
+.input-submit{
+    background-color: aqua;
+    font-weight: 800;
+    color: #0a1735;
+}

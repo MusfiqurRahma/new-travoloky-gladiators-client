@@ -1,44 +1,109 @@
+import axios from 'axios';
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { Button, Card, Col, Row } from 'react-bootstrap';
+import {Card, Spinner } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
+import './Singlepackage.css';
+
+
 const Singlepackage = () => {
-    const { orderId } = useParams()
-    const [orders, setOrders] = useState({});
+  const { orderId } = useParams();
+  const [packages, setPackages] = useState([]);
+  const { user } = useAuth();
+
+
     useEffect(() => {
-      fetch('http://localhost:5000/packages')
-          .then(res => res.json())
-          .then(data => {
-              const matchedData =data.find(singleData =>singleData._id===orderId);
-              setOrders(matchedData)
-              console.log(matchedData);
+        fetch("http://localhost:5000/packages")
+            .then((res) => res.json())
+            .then((data) => setPackages(data));
+    }, []);
+    if (!packages) {
+      <Spinner animation="border" variant="dark" />;
+  }
+  const foundPackage = packages.find((x) => x._id === orderId);
+
+  let _id, name,Description,img, price;
+
+  if (foundPackage) {
+      ({ _id, name,Description, img, price } = foundPackage);
+  }
+
+  const order_id = _id;
+  const status = "Pending";
+
+  // react hook form contents
+  const { register, handleSubmit, reset } = useForm();
+  const onSubmit = (data) => {
+      axios.post("http://localhost:5000/orders", {
+              ...data,
+              order_id,
+              status
           })
-        },[orderId])
+          .then((res) => {
+              if (res.data.insertedId) {
+                  alert("Added ID" + res.data.insertedId);
+                  reset();
+              }
+          });
+  };
     return (
-        <Row xs={1} md={1}>
-  <Col>
-    <Card className='w-25 m-auto mt-5 mb-5'>
-      <Card.Img variant="top" src={orders?.img} />
-      <Card.Body>
-        <Card.Title>{orders?.name}</Card.Title>
-        <Card.Text>
-          {orders?.Description}
-         </Card.Text>
-         <Row>
-          <Col><h4 style={{color:'green',fontWeight:'700'}}>${orders.price}</h4> </Col>                  
-          <Col style={{ color:'#f7cd13'}}><i className="fas fa-star"></i>
-         <i className="fas fa-star"></i>
-         <i className="fas fa-star"></i>
-         <i className="fas fa-star"></i>
-         <i className="fas fa-star"></i>                               
-        </Col>
-         </Row>
-        </Card.Body>
-       <Link><Button className='bg-secondary'>Order Now</Button></Link>
-    </Card>
-  </Col>
-</Row>
+      <div>
+      <Card className="text-center m-5 w-50 mx-auto" border="dark">
+          <Card.Header className="fw-bold">
+              Package Name: {name}
+          </Card.Header>
+          <Card.Img variant="top" className="w-75 m-auto" src={img} />
+          <Card.Body>
+              <Card.Text>{Description}</Card.Text>
+          </Card.Body>
+          <Card.Footer className="fw-bold">
+              <h5> ${price}</h5>
+          </Card.Footer>
+          <div className="package-detail container mb-3 rounded">
+            <h4 className="mb-4">Want To Book?</h4>
+            <h5>Please! Fillup the form.</h5>
+              <form className='single-package-form' onSubmit={handleSubmit(onSubmit)}>
+                  <input
+                      {...register("name", {
+                          required: true,
+                          maxLength: 30
+                      })}
+                      placeholder="Package Name"
+                      value={user.displayName}
+                  />
+                  <input
+                      type="email"
+                      {...register("email", { required: true })}
+                      placeholder="Your Email"
+                      value={user.email}
+                  />
+                  <input
+                      {...register("mobile", {
+                          required: true,
+                          maxLength: 20
+                      })}
+                      placeholder="Phone"
+                  />
+                  <textarea
+                      {...register("address")}
+                      placeholder="Address"
+                  />
+                  <input
+                      type="number"
+                      {...register("zip")}
+                      placeholder="Zip Code"
+                  />
+                  <input
+                      className="input-submit"
+                      type="submit"
+                      value="Confirm"
+                  />
+              </form>
+          </div>
+      </Card>
+  </div>
     );
 };
 

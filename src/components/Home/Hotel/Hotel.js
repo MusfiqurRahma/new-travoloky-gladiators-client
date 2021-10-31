@@ -10,7 +10,7 @@ const Hotel = (props) => {
       <div className="card-body">
             <h5 className="card-title">{name}</h5>
             <p className="card-text">{description.slice(0,200)}</p>
-            <Row style={{border:'1px solid gray',height:'30px',backgroundColor:'#0bbdb7',color:'white'}}>
+            <Row style={{border:'1px solid gray',height:'30px',backgroundColor:'gray',color:'white'}}>
               <Col>
                  <h5>${price}</h5>
               </Col>

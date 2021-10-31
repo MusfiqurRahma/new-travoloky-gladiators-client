@@ -16,7 +16,7 @@ const Package = (props) => {
               {Description}
               </Card.Text>
               <Link to={`/singlepackage/${_id}`}>
-              <button className='booking-btn'>Delete</button>
+              <button className='booking-btn'>Book Now</button>
               </Link>
           </Card.Body>
           </Card>
