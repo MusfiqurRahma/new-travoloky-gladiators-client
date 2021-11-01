@@ -6,3 +6,14 @@
 .country-btn:hover{
     background-color: #18c46b;
 }
+.price-time-container{
+    color: #0a1735;
+}
+@media only screen and (max-width:688px) {
+    .package-container{
+        margin-top: 30%;
+    }
+    .country-btn{
+        margin:5px;
+        }
+}

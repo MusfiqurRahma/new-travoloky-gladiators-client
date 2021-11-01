@@ -17,3 +17,9 @@ hr.line-title {
     background-color: aqua;
     transition: 0.5s;
 }
+@media only screen and (max-width:688px){
+    .about-img{
+        margin: auto;
+        border: 5px solid black;
+    }
+}

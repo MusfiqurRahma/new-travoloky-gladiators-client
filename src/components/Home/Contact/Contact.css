@@ -28,3 +28,12 @@
     background-color: aqua;
     transition:0.5s;
 }
+
+/* @media only screen and (max-width:688px) {
+    .contact-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+} */

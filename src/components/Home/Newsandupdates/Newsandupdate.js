@@ -1,14 +1,15 @@
 import React from 'react';
-import { Col,Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
+import './Newsandupdate.css';
 
 const Newsandupdate = () => {
     return (
-        <div>
+        <div className='news-container'>
             <h1 className="mt-5 p-5" style={{ fontWeight: '800' }}
             >News And Updates</h1><hr className='line-title' />
             <Row className="mt-5">
                 <Col>
-                <iframe width="500" height="300" src="https://www.youtube.com/embed/HWRQk7ubBnY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe className='news-clip'  src="https://www.youtube.com/embed/HWRQk7ubBnY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </Col>
                 <Col>
                     <h2 style={{ color: '#316ffe',fontWeight:'800' }}>DONT'T GIVE IN TO FEAR OR HOW TO  <br /> TRAVEL TO A PLACE YOU KNOW.</h2>

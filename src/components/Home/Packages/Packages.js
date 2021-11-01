@@ -14,7 +14,7 @@ const Packages = () => {
     },[])
     return (
         <div>
-            <div>
+            <div className='package-container'>
             <h2 style={{fontWeight:'800'}}>TOP PLACES</h2>
             <h4 className="text-secondary">BEST TRAVEL PACKAGES</h4>
             </div>

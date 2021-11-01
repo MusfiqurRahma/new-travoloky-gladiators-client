@@ -27,23 +27,25 @@ const Singlepackage = () => {
   let _id, name,Description,img, price;
 
   if (foundPackage) {
-      ({ _id, name,Description, img, price } = foundPackage);
+   
+    ({ _id, name, Description, img, price } = foundPackage);
+
   }
+  
 
   const order_id = _id;
-  const status = "Pending";
 
   // react hook form contents
   const { register, handleSubmit, reset } = useForm();
-  const onSubmit = (data) => {
-      axios.post("http://localhost:5000/orders", {
+    const onSubmit = (data) => {
+        data.package_details = foundPackage;
+        axios.post("http://localhost:5000/orders", {
               ...data,
               order_id,
-              status
           })
           .then((res) => {
-              if (res.data.insertedId) {
-                  alert("Added ID" + res.data.insertedId);
+            if (res.data.insertedId) {
+                  alert('Are You Sure to Booked This Package?');
                   reset();
               }
           });

@@ -4,10 +4,10 @@ import './Findflight.css';
 
 const Findflight = () => {
     const { register, handleSubmit } = useForm();
-  const onSubmit = data => console.log(data);
+    const onSubmit = data => console.log(data);
     return (
-        <div className="flight-container">
-            <h1 className="text-white">Find Your Flight</h1>
+        <div className="flight-container p-5">
+        <h1 className="text-white">Find Your Flight</h1>
         <form className="flight-form" onSubmit={handleSubmit(onSubmit)}>
           <div className="mt-4">
           <label><input type="radio" name="radio" id=""/> OneWay</label>
@@ -41,7 +41,7 @@ const Findflight = () => {
           <input
             type="number"
             placeholder="Child"
-            className="p-2 m-2"
+            className="p-2"
             {...register("number",
               { min: 18, max: 99 })} />
       <input className="btn-submit" type="submit"/>

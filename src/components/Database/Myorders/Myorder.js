@@ -1,44 +1,37 @@
 import React, { useEffect, useState } from 'react';
-import { Spinner } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
 import Singleorder from '../Singleorder/Singleorder';
 
 
+
 const Myorder = () => {
+    const { user } = useAuth();
     const [bookedPackages, setBookedPackages] = useState([])
 
-    const { user } = useAuth();
+
     useEffect(() => {
-        fetch('http://localhost:5000/myOrders')
+        fetch('http://localhost:5000/myorder')
             .then(res => res.json())
-            .then(data => setBookedPackages(data));
+            .then(data =>setBookedPackages(data));
     }, [])
-    if (!bookedPackages) {
-        <Spinner  animation='border' variant='dark'></Spinner>
-    }
+
     const myOrders = bookedPackages.filter(pack => user.email === pack.email);
-    console.log(myOrders);
     return (
         <div>
-            <h2 className='mb-2 mt-5'>Here is your Ordered List.</h2>
-            {
-                !bookedPackages.length ? (
-                    <div style={{ height: '50vh' }}>
-                        <p className='fs-5 fw-bold'>Loading! Please wait...</p>
-                        <Spinner  animation='border' variant='dark'></Spinner>
-                    </div>
-                ) : (
-                        <div className='booked-container container p-5'>
-                            {
-                                myOrders.map(myOrder => <Singleorder
-                                    key={myOrder._id}
-                                myOrder={myOrder}></Singleorder>)
-                            }
-                        </div>
-                )
-            }
-        </div>
+            <h2 style={{borderBottom:'4px solid #61a1d9',marginBottom:'60px',fontWeight:'800',color:'#0a1735'}} className='mb-5 mt-5'>Your Ordered List</h2>         
+          <Row xs={1} md={4} className='g-4'>
+              {
+               myOrders.map(myOrder => <Singleorder
+               key={myOrder._id}
+               myOrder={myOrder}>
+                  </Singleorder>)
+               }
+          </Row>
+          </div>
     );
 };
 
 export default Myorder;
+
+

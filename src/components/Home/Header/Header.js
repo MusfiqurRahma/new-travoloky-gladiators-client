@@ -9,7 +9,8 @@ import useAuth from '../../hooks/useAuth';
 const Header = () => {
   const { user,logOut } = useAuth();
   return (
-    <><Navbar bg="secondary" variant="light" sticky='top'   collapseOnSelect expand="lg">
+    <>
+      <Navbar style={{backgroundColor:'#0a1735'}} variant="light" sticky='top' collapseOnSelect expand="lg">
        <Container>
        <Navbar.Brand to="/home"><img style={{marginRight:'40%'}} src={logo} alt="" /> </Navbar.Brand>
          <Navbar.Collapse className="justify-content-center">
@@ -43,7 +44,8 @@ const Header = () => {
             <Button variant="primary" size="lg">
             See More
            </Button>{' '}
-           </div> </>
+      </div>
+    </>
     );
 };
 export default Header;
