@@ -11,7 +11,7 @@ const Myorder = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/myorder')
+        fetch('https://grim-zombie-49480.herokuapp.com/myorder')
             .then(res => res.json())
             .then(data =>setBookedPackages(data));
     }, [])

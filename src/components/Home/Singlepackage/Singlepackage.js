@@ -15,7 +15,7 @@ const Singlepackage = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:5000/packages")
+        fetch("https://grim-zombie-49480.herokuapp.com/packages")
             .then((res) => res.json())
             .then((data) => setPackages(data));
     }, []);
@@ -39,7 +39,7 @@ const Singlepackage = () => {
   const { register, handleSubmit, reset } = useForm();
     const onSubmit = (data) => {
         data.package_details = foundPackage;
-        axios.post("http://localhost:5000/orders", {
+        axios.post("https://grim-zombie-49480.herokuapp.com/orders", {
               ...data,
               order_id,
           })

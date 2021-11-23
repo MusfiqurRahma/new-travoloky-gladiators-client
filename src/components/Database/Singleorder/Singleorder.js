@@ -4,7 +4,7 @@ import { Button, Card, Col, Row } from 'react-bootstrap';
 const Singleorder = ({ myOrder }) => {
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/myorder/${id}`
+        const url = `https://grim-zombie-49480.herokuapp.com/myorder/${id}`
         fetch(url, {
             method: 'DELETE',
             

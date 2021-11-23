@@ -5,7 +5,7 @@ const Manageallorders = () => {
 
   const [manageOrders, setManageOrders] = useState([]);
    
-  const url = 'http://localhost:5000/allorder';
+  const url = 'https://grim-zombie-49480.herokuapp.com/allorder';
   useEffect(() => {
     fetch(url)
       .then(res => res.json())

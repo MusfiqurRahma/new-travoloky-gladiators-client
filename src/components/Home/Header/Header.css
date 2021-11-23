@@ -14,6 +14,7 @@
     padding: 0 8px;
     border-radius: 5px;
     margin-bottom: 8px;
+    /* width: 10px; */
 }
 .logOut:hover{
     background-image: linear-gradient(#4e7e61,#264869);
